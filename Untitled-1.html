@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="kk" class="notranslate">
+<head>
+    <meta charset="UTF-8">
+    <meta name="google" content="notranslate">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arailym Masterclass ✨</title>
+    <style>
+        :root {
+            --autumn-primary: #d35400;
+            --autumn-secondary: #e67e22;
+            --fantasy-primary: #8e44ad;
+            --fantasy-secondary: #9b59b6;
+            --bg-color: #fdfaf6;
+            --text-color: #2c3e50;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--autumn-primary) 0%, var(--autumn-secondary) 60%, var(--fantasy-primary) 100%);
+            color: white;
+            text-align: center;
+            padding: 2.5rem 1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 1.5rem auto;
+            padding: 0 1rem;
+        }
+
+        .about-section {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            margin-bottom: 2.5rem;
+            text-align: center;
+            border-left: 5px solid var(--autumn-secondary);
+        }
+
+        .about-section h2 {
+            margin-bottom: 0.5rem;
+            color: var(--autumn-primary);
+            font-size: 1.5rem;
+        }
+
+        .grid-title {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.6rem;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .product-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(0,0,0,0.02);
+        }
+
+        .card-img-container {
+            width: 100%;
+            height: 250px;
+            background-color: #f0f0f0;
+            position: relative;
+        }
+
+        .card-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .badge-autumn { background-color: var(--autumn-primary); }
+        .badge-fantasy { background-color: var(--fantasy-primary); }
+
+        .card-content {
+            padding: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .card-content h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .card-content p {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            flex-grow: 1;
+        }
+
+        /* Тот самый красивый градиентный блок со скруглёнными углами */
+        .cta-gradient-container {
+            background: linear-gradient(135deg, var(--fantasy-primary) 0%, var(--autumn-primary) 100%);
+            padding: 3rem 1.5rem;
+            border-radius: 20px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            margin: 4rem 0;
+            text-align: center;
+        }
+
+        .cta-gradient-container h2 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 0.8rem;
+            color: white !important;
+        }
+
+        .cta-gradient-container p {
+            font-size: 1.05rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            color: white !important;
+        }
+
+        /* Кнопка WhatsApp внутри градиентного прямоугольника */
+        .whatsapp-link {
+            display: inline-flex !important;
+            align-items: center !important;
+            background-color: #25D366 !important;
+            color: white !important;
+            text-decoration: none !important;
+            padding: 1rem 2.5rem !important;
+            font-size: 1.2rem !important;
+            font-weight: bold !important;
+            border-radius: 40px !important;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4) !important;
+            transition: background-color 0.2s, transform 0.2s !important;
+        }
+
+        .whatsapp-link:hover {
+            background-color: #1e7e34 !important;
+            transform: scale(1.02) !important;
+        }
+
+        .whatsapp-link svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+            margin-right: 10px;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1.5rem 1rem;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            opacity: 0.8;
+            font-size: 0.85rem;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Арайлым Мастерскаясы ✨</h1>
+        <p>Мектеп пен балабақшаға арналған эксклюзивті қолөнер бұйымдары — тез, әдемі және ерекше!</p>
+    </header>
+
+    <div class="container">
+        
+        <section class="about-section">
+            <h2>Ата-аналардың кешкі уақытын сақтап қаламыз! 🍁</h2>
+            <p>«Алтын күз» немесе еркін шығармашылық байқауына қолөнер бұйымын жасау тапсырылды ма, ал уақытыңыз мүлдем жоқ па? Арайлым анамыз барлығын ойлап қойды! Әрбір жұмыс табиғи материалдарды қолдана отырып, үлкен махаббатпен және қиялмен қолдан жасалған.</p>
+        </section>
+
+        <h2 class="grid-title">Біздің жұмыстар жинағы</h2>
+
+        <div class="products-grid">
+
+            <div class="product-card">
+                <div class="card-img-container">
+                    <span class="badge badge-autumn">KҮЗГІ ЖИНАҚ 🍁</span>
+                    <img src="6.jpg" alt="Ертегі үйшігі">
+                </div>
+                <div class="card-content">
+                    <h3>«Ертегі үйшігі» композициясы</h3>
+                    <p>Табиғи тастардан жасалған қоршауы, кішкентай субұрқағы және табиғи безендірулері бар ғажайып орман үйшігі. Мектеп көрмелерінің нағыз хиты!</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="card-img-container">
+                    <span class="badge badge-autumn">KҮЗГІ ЖИНАҚ 🏡</span>
+                    <img src="5.jpg" alt="Ауыл ауласы">
+                </div>
+                <div class="card-content">
+                    <h3>«Ауыл ауласы» қолөнері</h3>
+                    <p>Нағыз кепкен жапырақтардан жасалған шатыры, ағаш қоршауы, құдығы және күзгі ағаштары бар өте жайлы ауыл көрінісі.</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="card-img-container">
+                    <span class="badge badge-autumn">KҮЗГІ ЖИНАҚ 🐿️</span>
+                    <img src="4.jpg" alt="Орман тиіндері">
+                </div>
+                <div class="card-content">
+                    <h3>«Орман тиіндері» панорамасы</h3>
+                    <p>Жарқын күзгі жапырақтар, көбелектер, пластилиннен жасалған қанқыздар және сүйкімді тиіндері бар қанық түсті күзгі орман алаңқайы.</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="card-img-container">
+                    <span class="badge badge-fantasy">СИҚЫРЛЫ ФЭНТЕЗИ 🔮</span>
+                    <img src="3.jpg" alt="Саябақ аймағы">
+                </div>
+                <div class="card-content">
+                    <h3>«Сиқырлы саябақ» композициясы</h3>
+                    <p>Шишкадан жасалған үкілер, орындықтар, кішкентай қолшатыр және павлин қауырсындарымен безендірілген құстар ұясы бар ерекше фантазиялық жұмыс.</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="card-img-container">
+                    <span class="badge badge-fantasy">СИҚЫРЛЫ ФЭНТЕЗИ 🦆</span>
+                    <img src="2.jpg" alt="Күзгі қиял топтамасы">
+                </div>
+                <div class="card-content">
+                    <h3>«Күзгі қиял» шағын топтамасы</h3>
+                    <p>Әртүрлі ертегі кейіпкерелері, әткеншектер, көлшіктегі үйректер және түлкілер бейнеленген 4 бірдей керемет шағын шығармашылық жұмыстардың коллажы.</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="card-img-container">
+                    <span class="badge badge-autumn">KҮЗГІ ЖИНАҚ 🦔</span>
+                    <img src="1.jpg" alt="Орман кірпісі">
+                </div>
+                <div class="card-content">
+                    <h3>«Орман кірпісі мен саңырауқұлақтар»</h3>
+                    <p>Дәннен жасалған ерекше шатыры бар үйшік, шишкадан жасалған сүйкімді кірпі, саңырауқұлақтар, гүлдер және емен жапырақтарынан құралған шедевр.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Полностью исправленный прямоугольник, кнопка теперь 100% отображается -->
+       
+<section class="cta-gradient-container">
+    <h2>Арайлым анамыздың жұмыстары ұнады ма?</h2>
+    <p>Өзіңізге ұнаған қолөнер бұйымына тапсырыс беру үшін бізге WhatsApp арқылы жазыңыз!</p>
+
+    <a
+        class="whatsapp-link"
+        href="https://wa.me/77789338561?text=Сәлеметсіз%20бе!%20Қолөнер%20бұйымына%20тапсырыс%20бергім%20келеді."
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.52 3.48A11.8 11.8 0 0 0 12.13 0C5.58 0 .25 5.33.25 11.88c0 2.1.55 4.15 1.6 5.96L.15 24l6.32-1.66a11.9 11.9 0 0 0 5.66 1.44h.01c6.55 0 11.88-5.33 11.88-11.88 0-3.17-1.23-6.15-3.5-8.42ZM12.14 21.8a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-3.75.98 1-3.65-.24-.38a9.86 9.86 0 0 1-1.52-5.28c0-5.47 4.45-9.92 9.92-9.92 2.65 0 5.14 1.03 7.02 2.91a9.86 9.86 0 0 1 2.9 7.02c0 5.47-4.45 9.92-9.93 9.92Zm5.44-7.43c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.77-.73 2.02-1.44.25-.72.25-1.33.17-1.45-.07-.12-.27-.2-.57-.35Z"/>
+        </svg>
+        WhatsApp арқылы тапсырыс беру
+    </a>
+</section>
+
+<footer>
+    <p>© 2026 Арайлым Мастерскаясы. Барлық құқықтар қорғалған.</p>
+</footer>
+</body>
+</html>
